@@ -79,8 +79,8 @@ public class Transacao implements Serializable {
 		return valor;
 	}
 
-	public void setValor(String valor) {
-		this.valor = valor;
+	public void setValor(double 2) {
+		this.valor = 2;
 	}
 
 	public int getQdt_Parcelas() {
@@ -135,4 +135,9 @@ public class Transacao implements Serializable {
 				 + "qdt_Parcelas=" + qdt_Parcelas + "]";
 
 	 }
+
+	public int getValor1() {
+		// TODO Auto-generated method stub
+		
+	}
 }
