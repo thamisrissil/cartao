@@ -12,12 +12,12 @@ import com.cartoes.api.entities.Cartao;
  
 
 public interface CartaoRepository extends JpaRepository<Cartao, Integer> {
-    @Transactional(readOnly = true)
-       @Query("SELECT ca FROM Cartao ca WHERE ca.cliente.id = :clienteId")
-       List<Cartao> findByClienteId(@Param("clienteId") int clienteId);
-
-    @Transactional(readOnly = true)
-    Optional<Cartao> findByNumero(String numero);
+	@Transactional(readOnly = true)
+   	@Query("SELECT ca FROM Cartao ca WHERE ca.cliente.id = :clienteId")
+   	List<Cartao> findByClienteId(@Param("clienteId") int clienteId);
+	
+	@Transactional(readOnly = true)
+	Optional<Cartao> findByNumero(String numero);
  
 }
 

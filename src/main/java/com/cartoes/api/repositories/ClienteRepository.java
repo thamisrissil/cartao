@@ -10,11 +10,10 @@ import com.cartoes.api.entities.Cliente;
  
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
  
-       @Transactional(readOnly = true)
-       Cliente findByCpf(String cpf);
-
-       @Transactional(readOnly = true)
-       List<Cliente> findByUfAndDataAtualizacao(String uf, Date dataAtualizacao);
+   	@Transactional(readOnly = true)
+   	Cliente findByCpf(String cpf);
+   	
+   	@Transactional(readOnly = true)
+   	List<Cliente> findByUfAndDataAtualizacao(String uf, Date dataAtualizacao);
  
 }
-
