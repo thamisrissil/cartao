@@ -1,4 +1,3 @@
-  
 package com.cartoes.api.repositories;
 
 import java.util.List;
@@ -12,7 +11,7 @@ import com.cartoes.api.entities.Transacao;
 
 
 public interface TransacaoRepository extends JpaRepository<Transacao, Integer> {
-	@Transactional(readOnly = true)
-	@Query("SELECT ta FROM Transacao ta WHERE ta.cartao.numero = :cartaoNumero")
-	List<Transacao> findByCartaoNumero(@Param("cartaoNumero") String cartaoNumero);
+    @Transactional(readOnly = true)
+    @Query("SELECT ta FROM Transacao ta WHERE ta.cartao.numero = :cartaoNumero")
+    List<Transacao> findByCartaoNumero(@Param("cartaoNumero") String cartaoNumero);
 }

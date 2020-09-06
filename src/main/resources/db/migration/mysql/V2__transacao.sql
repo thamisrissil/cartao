@@ -1,9 +1,9 @@
 CREATE TABLE `Transacao` (
 `id` INT NOT NULL AUTO_INCREMENT,
-`data_Transacao` DATETIME NOT NULL,
+`dataTransacao` DATETIME NOT NULL,
 `cnpj` CHAR(14) NOT NULL,
 `valor` DOUBLE NOT NULL,
-`qdt_Parcelas` INT NOT NULL,
+`qdtParcelas` INT NOT NULL,
 `juros` DOUBLE NOT NULL,
 `cartao_id` INT NOT NULL,
 PRIMARY KEY (`id`),

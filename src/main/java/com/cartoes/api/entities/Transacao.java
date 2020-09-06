@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-@Table(name = "Transacao")
+@Table(name = "transacao")
 public class Transacao implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class Transacao implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(name = "dataTransacao", nullable = false)
+	@Column(name = "data_Transacao", nullable = false)
 	private Date dataTransacao;
 
 	@Column(name = "cnpj", nullable = false, length = 14)
@@ -34,7 +34,7 @@ public class Transacao implements Serializable {
 	@Column(name = "valor", nullable = false)
 	private double valor;
 
-	@Column(name = "qdtParcelas", nullable = false)
+	@Column(name = "qdt_Parcelas", nullable = false)
 	private int qdtParcelas;
 
 	@Column(name = "juros", nullable = false)
