@@ -27,17 +27,17 @@ import com.cartoes.api.utils.ConsistenciaException;
 public class TransacaoController {
 
 	private static final Logger log = LoggerFactory.getLogger(TransacaoController.class);
-	
+
 	@Autowired
 	private TransacaoService transacaoService;
-	
+
 	@GetMapping(value = "/cartao/{cartaoNumero}")
 	public ResponseEntity<List<Transacao>> buscarPorNumero(@PathVariable("Numero") String numero){
 		try {
 			log.info("Controller: buscando transações do cartão de Numero: {}", numero);
-			
+
 			Optional<List<Transacao>> transacao = transacaoService.buscarPorNumero(numero);
-			
+
 			return ResponseEntity.ok(transacao.get());
 		} catch (ConsistenciaException e) {
 			log.info("Controller: Inconsistencia de dados {}", e.getMensagem());
@@ -47,12 +47,12 @@ public class TransacaoController {
 			return ResponseEntity.status(500).body(new ArrayList<Transacao>());
 		}
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<Transacao> salvar(@RequestBody Transacao transacao){
 		try {
 			log.info("Controller: salvando a transacao: {}", transacao.toString());
-			
+
 			return ResponseEntity.ok(this.transacaoService.salvar(transacao));
 		} catch (ConsistenciaException e) {
 			log.info("Controller: Inconsistência de dados: {}", e.getMensagem());
