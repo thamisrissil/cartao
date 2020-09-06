@@ -17,7 +17,7 @@ import com.cartoes.api.utils.ConsistenciaException;
 
 @Service
 public class TransacaoService {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(TransacaoService.class);
 	@Autowired
 	private TransacaoRepository transacaoRepository;
@@ -53,10 +53,10 @@ public class TransacaoService {
 			 return transacaoRepository.save(transacao);
 			 } catch (DataIntegrityViolationException e) {
 
-			 log.info("Service: deu erro");
-			 throw new ConsistenciaException("deu erro");
+			 log.info("Service: Houve um erro");
+			 throw new ConsistenciaException("Houve um erro");
 
 			 }
 	} 
-	
-}
+
+} 
