@@ -8,22 +8,25 @@ import org.hibernate.validator.constraints.br.CNPJ;
 public class TransacaoDto {
 	
 	private String id;
-	@NotEmpty(message = "cnpj não pode ser vazio")
-	@Length(min = 1, max = 14, message = "o cnpj deve conter 14 caracteres")
-		private String cnpj;
 	
-	@NotEmpty(message = "valor não pode ser vazio")
-	@Length(min = 1, max = 10, message = "o valor deve conter 10 caracteres")
-		private String valor;
-
-	@NotEmpty(message = "quantidade de parcelas não pode ser vazio")
-	@Length(min = 1, max = 2, message = "quantidade de parcelas deve conter 2 caracteres")
-		private String qtdParcelas;
+	@NotEmpty(message = "CNPJ não pode ser vazio.")
+	@CNPJ(message = "CNPJ inválido.")
+	private String cnpj;
 	
-	@NotEmpty(message = "juros não pode ser vazio")
-	@Length(min = 1, max = 4, message = "quantidade de juros deve conter 4 caracteres")
-		private String juros;
+	@NotEmpty(message = "Quantidade de parcelas não pode ser vazio.")
+	@Length(min = 1, max = 2, message = "Quantidade de parcelas deve conter 1 ou 2 caracteres.")	
+	private String qtdParcelas;
 	
+	@NotEmpty(message = "Juros não pode ser vazio.")
+	@Length(min = 1, max = 4, message = "Juros deve conter entre 1 e 4 caracteres.")
+	private String juros;
+	
+	@NotEmpty(message = "Valor não oide ser vazio.")
+	@Length(min = 1, max = 10, message = "Valor deve conter entre 1 e 10 caracteres.")
+	private String valor;
+	
+		
+	@NotEmpty(message = "O número do cartão não pode ser vazio.")
 	private String cartaoNumero;
 
 	public String getId() {
@@ -82,6 +85,4 @@ public class TransacaoDto {
 				+ " juros=" + juros + ","
 				+ " cartaoNumero=" + cartaoNumero + "]";
 	}
-}
-	
 }
