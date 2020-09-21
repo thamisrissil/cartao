@@ -21,12 +21,13 @@ public class TransacaoDto {
 	@Length(min = 1, max = 4, message = "Juros deve conter entre 1 e 4 caracteres.")
 	private String juros;
 	
-	@NotEmpty(message = "Valor não oide ser vazio.")
+	@NotEmpty(message = "Valor não pode ser vazio.")
 	@Length(min = 1, max = 10, message = "Valor deve conter entre 1 e 10 caracteres.")
 	private String valor;
 	
 		
 	@NotEmpty(message = "O número do cartão não pode ser vazio.")
+	@Length(min = 16, max = 16, message = "Numero do cartão deve conter 16 caracteres.")
 	private String cartaoNumero;
 
 	public String getId() {
